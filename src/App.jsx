@@ -8,6 +8,7 @@ import MainLayout from './components/layout/MainLayout';
 import Dashboard from './components/pages/Dashboard';
 import Suppliers from './components/pages/Suppliers';
 import SupplierFormPage from './components/pages/SupplierFormPage';
+import Categories from './components/pages/Categories';
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
           <Route path="/suppliers" element={<Suppliers />} />
           <Route path="/suppliers/new" element={<SupplierFormPage />} />
           <Route path="/suppliers/:id/edit" element={<SupplierFormPage />} />
-          {/* <Route path="/categories" element={<Categories />} />
-          <Route path="/settings" element={<Settings />} /> */}
+          <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/settings" element={<Settings />} /> */}
         </Route>
       </Route>
 
