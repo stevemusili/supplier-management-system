@@ -8,7 +8,7 @@ function SideBar() {
     const [error, setError] = useState("");
 
     const links = [
-        { name: "Dashboard", path: "/dashbaord" },
+        { name: "Dashboard", path: "/dashboard" },
         { name: "Suppliers", path: "/suppliers" },
         { name: "Categories", path: "/categories" },
         { name: "Settings", path: "/setting" },
