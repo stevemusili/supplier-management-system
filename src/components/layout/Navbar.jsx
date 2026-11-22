@@ -21,7 +21,7 @@ function Navbar() {
             : "Supplier Management System");
 
     return (
-        <header className="bg-white shadow-sm px-4 md:px-6 py-4 flex flex-wrap items-center justify-center font-semibold ">
+        <header className="bg-white shadow-sm px-4 md:px-6 py-4 flex flex-wrap items-center justify-between font-semibold ">
             <div>
                 <h1 className="text-xl md:text-2xl font-semibold text-gray-800">
                     {pageTitle}
