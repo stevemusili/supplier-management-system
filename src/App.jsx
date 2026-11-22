@@ -5,6 +5,7 @@ import ProtectedRoute from './components/common/ProtectedRoute';
 import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import MainLayout from './components/layout/MainLayout';
+import Dashboard from './components/pages/Dashboard';
 
 function App() {
 
@@ -18,11 +19,11 @@ function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/suppliers" element={<Suppliers />} />
+          {/* <Route path="/suppliers" element={<Suppliers />} />
           <Route path="/suppliers/new" element={<SupplierFormPage />} />
           <Route path="/suppliers/:id/edit" element={<SupplierFormPage />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={<Settings />} /> */}
         </Route>
       </Route>
 
