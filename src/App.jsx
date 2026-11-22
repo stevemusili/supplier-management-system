@@ -6,6 +6,8 @@ import Login from './components/pages/Login';
 import Register from './components/pages/Register';
 import MainLayout from './components/layout/MainLayout';
 import Dashboard from './components/pages/Dashboard';
+import Suppliers from './components/pages/Suppliers';
+import SupplierFormPage from './components/pages/SupplierFormPage';
 
 function App() {
 
@@ -19,10 +21,10 @@ function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<MainLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/suppliers" element={<Suppliers />} />
+          <Route path="/suppliers" element={<Suppliers />} />
           <Route path="/suppliers/new" element={<SupplierFormPage />} />
           <Route path="/suppliers/:id/edit" element={<SupplierFormPage />} />
-          <Route path="/categories" element={<Categories />} />
+          {/* <Route path="/categories" element={<Categories />} />
           <Route path="/settings" element={<Settings />} /> */}
         </Route>
       </Route>
