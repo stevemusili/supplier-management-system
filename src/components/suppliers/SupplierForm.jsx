@@ -1,10 +1,15 @@
 import { useState } from "react";
+import useCategories from "../../hooks/useCategories";
 
-function SupplierForm({
-  initialData = {},
-  onSubmit,
-  submitLabel = "Save Supplier",
-}) {
+function SupplierForm({ initialData = {}, onSubmit, submitLabel = "Save Supplier" }) {
+
+  // fecth categories from Firestore
+  const {
+    categories,
+    loading: categoriesLoading,
+    error: categoriesError,
+  } = useCategories();
+
   const [formData, setFormData] = useState({
     name: initialData.name || "",
     email: initialData.email || "",
@@ -55,8 +60,13 @@ function SupplierForm({
       newErrors.address = "Address is required.";
     }
 
-    if (!formData.category) {
-      newErrors.category = "Select a category.";
+    if (
+      !formData.category ||
+      !categories.some(
+        (category) => category.name === formData.category
+      )
+    ) {
+      newErrors.category = "Select a valid category.";
     }
 
     setErrors(newErrors);
@@ -141,20 +151,30 @@ function SupplierForm({
           name="category"
           value={formData.category}
           onChange={handleChange}
+          disabled={categoriesLoading || Boolean(categoriesError)}
           className="w-full border border-gray-300 rounded-lg p-3"
         >
-          <option value="">Select Category</option>
-          <option value="IT Services">IT Services</option>
-          <option value="Water">Water</option>
-          <option value="Stationery">Stationery</option>
-          <option value="Transport">Transport</option>
-          <option value="Agriculture">Agriculture</option>
-          <option value="Food & Beverage">Food & Beverage</option>
-          <option value="Raw Materials">Raw Materials</option>
-          <option value="Printing">Printing</option>
-          <option value="Packaging">Packaging</option>
-          <option value="Other">Other</option>
+          <option value="">
+            {categoriesLoading
+              ? "Loading categories..."
+              : "Select Category"}
+          </option>
+
+          {categories.map((category) => (
+            <option
+              key={category.id}
+              value={category.name}
+            >
+              {category.name}
+            </option>
+          ))}
         </select>
+
+        {categoriesError && (
+          <p role="alert" className="text-red-600 text-sm mt-1">
+            {categoriesError}
+          </p>
+        )}
 
         {errors.category && (
           <p role="alert" className="text-red-600 text-sm mt-1">
