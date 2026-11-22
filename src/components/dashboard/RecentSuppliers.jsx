@@ -11,7 +11,7 @@ function RecentSuppliers({ suppliers }) {
                         <tr>
                             <th className="p-3">Name</th>
                             <th className="p-3">Category</th>
-                            <th className="p-3">Contact</th>
+                            <th className="p-3">Email</th>
                             <th className="p-3">Status</th>
                         </tr>
                     </thead>

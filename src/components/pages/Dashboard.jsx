@@ -1,40 +1,10 @@
 import RecentSuppliers from "../dashboard/RecentSuppliers";
 import StatCard from "../dashboard/StatCard";
+import useDashboardData from "../../hooks/useDashboardData";
 
 function Dashboard() {
-
-    const suppliers = [
-        {
-            id: 1,
-            name: "Shanks Ltd",
-            category: "Office Supplies",
-            email: "shanks@gmail.com",
-            status: "Active",
-            createdAt: "2026-11-21",
-        },
-        {
-            id: 2,
-            name: "Lacoste Transport",
-            category: "Transport",
-            email: "lacosted@gmail.com",
-            status: "Pending",
-            createdAt: "2026-11-21",
-        },
-        {
-            id: 3,
-            name: "Mural Prints",
-            category: "Printing",
-            email: "muralprints@gmail.com",
-            status: "Inactive",
-            createdAt: "2026-11-21"
-        }
-    ];
-
-    const categories = [
-        "Office Supplies",
-        "Transport",
-        "Printing",
-    ];
+    // import the custom hook
+    const { suppliers, categories, loading, error } = useDashboardData();
 
     // calculate dashboard statistics
     const totalSuppliers = suppliers.length;
@@ -51,11 +21,29 @@ function Dashboard() {
 
     // get the 5 most recently added suppliers
     const recentSuppliers = [...suppliers]
-        .sort(
-            (a, b) =>
-                new Date(b.createdAt) - new Date(a.createdAt)
-        )
+        .sort((a, b) => {
+            const dateA = a.createdAt?.toMillis?.() ?? 0;
+            const dateB = b.createdAt?.toMillis?.() ?? 0;
+            return dateB - dateA;
+        })
         .slice(0, 5);
+
+        if (loading) {
+            return (
+                <div role="status" className="p-6 text-gray-600">
+                    Loading Dashboard...
+                </div>
+            );
+        }
+
+        if (error) {
+            return (
+                <div role="alert" className="p-6 text-red-600">
+                    {error}
+                </div>
+            );
+        }
+
     return (
         <div>
             {/* dashboard heading */}
