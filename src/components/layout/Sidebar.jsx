@@ -11,7 +11,7 @@ function SideBar() {
         { name: "Dashboard", path: "/dashboard" },
         { name: "Suppliers", path: "/suppliers" },
         { name: "Categories", path: "/categories" },
-        { name: "Settings", path: "/setting" },
+        { name: "Settings", path: "/settings" },
     ];
 
     async function handleLogout() {
