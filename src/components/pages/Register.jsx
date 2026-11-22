@@ -55,7 +55,7 @@ function Register() {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-100 p-4">
-            <div className="w-full m-w-md bg-white p-8 rounded-xl shadow-lg">
+            <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
                 <h1 className="text-3xl font-bold text-blue-950 text-center">
                     Supplier Management System
                 </h1>
