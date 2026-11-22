@@ -9,6 +9,7 @@ import Dashboard from './components/pages/Dashboard';
 import Suppliers from './components/pages/Suppliers';
 import SupplierFormPage from './components/pages/SupplierFormPage';
 import Categories from './components/pages/Categories';
+import Settings from './components/pages/Settings';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
           <Route path="/suppliers/new" element={<SupplierFormPage />} />
           <Route path="/suppliers/:id/edit" element={<SupplierFormPage />} />
           <Route path="/categories" element={<Categories />} />
-          {/* <Route path="/settings" element={<Settings />} /> */}
+          <Route path="/settings" element={<Settings />} />
         </Route>
       </Route>
 
