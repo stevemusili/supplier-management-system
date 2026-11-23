@@ -34,6 +34,106 @@ https://supplier-management-system-navy.vercel.app
  - GitHub Actions
  - Vercel
 
+## Project Structure
+
+```
+supplier-management-system/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml                  
+│
+├── public/                         
+│
+├── src/
+│   ├── components/
+│   │   ├── categories/
+│   │   │   ├── CategoryForm.jsx
+│   │   │   ├── CategoryForm.test.jsx
+│   │   │   ├── CategoryTable.jsx
+│   │   │   └── CategoryTable.test.jsx
+│   │   │
+│   │   ├── common/
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   └── ProtectedRoute.test.jsx
+│   │   │
+│   │   ├── dashboard/
+│   │   │   ├── RecentSuppliers.jsx
+│   │   │   └── StatCard.jsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── MainLayout.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   └── Sidebar.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Categories.jsx
+│   │   │   ├── Categories.test.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Dashboard.test.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Login.test.jsx
+│   │   │   ├── Register.jsx
+│   │   │   ├── Register.test.jsx
+│   │   │   ├── Settings.jsx
+│   │   │   ├── SupplierFormPage.jsx
+│   │   │   ├── SupplierFormPage.test.jsx
+│   │   │   ├── Suppliers.jsx
+│   │   │   └── Suppliers.test.jsx
+│   │   │
+│   │   ├── settings/
+│   │   │   ├── EmailForm.jsx
+│   │   │   ├── PasswordForm.jsx
+│   │   │   └── ProfileForm.jsx
+│   │   │
+│   │   └── suppliers/
+│   │       ├── SupplierForm.jsx
+│   │       ├── SupplierForm.test.jsx
+│   │       ├── SupplierTable.jsx
+│   │       └── SupplierTable.test.jsx
+│   │
+│   ├── context/
+│   │   ├── AuthContext.jsx
+│   │   └── AuthContext.test.jsx
+│   │
+│   ├── firebase/
+│   │   └── config.js              
+│   │
+│   ├── hooks/
+│   │   ├── useCategories.js
+│   │   ├── useCategories.test.js
+│   │   ├── useDashboardData.js
+│   │   ├── useDashboardData.test.js
+│   │   ├── useSuppliers.js
+│   │   └── useSuppliers.test.js
+│   │
+│   ├── services/
+│   │   ├── categoryService.js
+│   │   ├── categoryService.test.js
+│   │   ├── profileService.js
+│   │   ├── supplierService.js
+│   │   └── supplierService.test.js
+│   │
+│   ├── test/
+│   │   └── setup.js              
+│   │
+│   ├── App.css
+│   ├── App.jsx                    
+│   ├── index.css                   
+│   └── main.jsx                    
+│
+├── .env.example                    
+├── .gitignore 
+├── LICENSE  
+├── README.md                   
+├── eslint.config.js                
+├── index.html                      
+├── package-lock.json                  
+├── package.json              
+├── vercel.json               
+└── vite.config.js              
+```
+
 ## Installation
 Clone the GitHub repository and navigate into the project directory.
 
@@ -65,7 +165,13 @@ npm run test:run
 ```
 
 Run tests with coverage:
+
 ```
 npm run test:coverage
 ```
 
+## License
+
+Copyright (c) 2026 Steve Musili
+
+[MIT License](LICENSE).
