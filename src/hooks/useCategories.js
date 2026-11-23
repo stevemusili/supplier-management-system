@@ -18,6 +18,7 @@ function useCategories() {
       return;
     }
 
+    setCategories([]);
     setLoading(true);
     setError("");
 
@@ -35,6 +36,7 @@ function useCategories() {
         }));
 
         setCategories(categoryData);
+        setError("");
         setLoading(false);
       },
       (err) => {

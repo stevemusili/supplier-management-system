@@ -32,6 +32,7 @@ function useSuppliers() {
         }));
 
         setSuppliers(supplierData);
+        setError("");
         setLoading(false);
       },
       (err) => {

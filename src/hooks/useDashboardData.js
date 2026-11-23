@@ -25,6 +25,8 @@ function useDashboardData() {
       return;
     }
 
+    setSuppliers([]);
+    setCategories([]);
     setLoading(true);
     setError("");
 

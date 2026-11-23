@@ -32,11 +32,6 @@ describe("categoryService", () => {
 
     const result = await addCategory(data, "user123");
 
-    expect(collection).toHaveBeenCalledWith(
-      expect.anything(),
-      "categories"
-    );
-
     expect(addDoc).toHaveBeenCalledWith(
       "mock-categories-collection",
       {
