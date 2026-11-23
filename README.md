@@ -1,16 +1,71 @@
-# React + Vite
+# Supplier Management System
+The Supplier Management System is a web-based application that allows administrators to register, manage, and monitor suppliers in one centralized platform. The system enables administrators to track supplier status, view supplier records, add new suppliers, and update supplier details.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Links
+GitHub Repository
 
-Currently, two official plugins are available:
+https://github.com/stevemusili/supplier-management-system
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live Application
 
-## React Compiler
+https://supplier-management-system-navy.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
+ - User registration, login, and logout
+ - Protected routes
+ - Supplier management (create, view, edit, delete)
+ - Category management
+ - Supplier search and filtering
+ - Dashboard statistics
+ - User profile and account settings
+ - Automated testing with Vitest
+ - Continuous integration with GitHub Actions
+ - Deployment with Vercel
 
-## Expanding the ESLint configuration
+## Technologies
+ - React
+ - Vite
+ - Tailwind CSS
+ - React Router
+ - Firebase Authentication
+ - Cloud Firestore
+ - Vitest
+ - React Testing Library
+ - GitHub Actions
+ - Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+Clone the GitHub repository and navigate into the project directory.
+
+```
+git clone https://github.com/stevemusili/supplier-management-system
+cd supplier-management-system
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+## Run Locally
+Start the development server:
+
+```
+npm run dev
+```
+
+Open the local URL in your terminal.
+
+## Testing
+Run all automated tests:
+
+```
+npm run test:run
+```
+
+Run tests with coverage:
+```
+npm run test:coverage
+```
+
