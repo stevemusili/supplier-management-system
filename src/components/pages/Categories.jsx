@@ -58,27 +58,40 @@ function Categories() {
   }
 
   async function handleSave(data) {
-    if (editingCategory) {
-      const oldName = editingCategory.name;
+    setError("");
 
-      // prevent changing a name still used by suppliers
-      // supplier records currently store category names
-      if (
-        oldName !== data.name &&
-        suppliers.some((s) => s.category === oldName)
-      ) {
-        throw new Error(
-          "This category is in use. Reassign its suppliers before renaming it."
-        );
+    try {
+      if (editingCategory) {
+        const oldName = editingCategory.name;
+
+        // prevent renaming a category used by suppliers
+        if (
+          oldName !== data.name &&
+          suppliers.some((s) => s.category === oldName)
+        ) {
+          throw new Error(
+            "This category is in use. Reassign its suppliers before renaming it."
+          );
+        }
+
+        // update existing category
+        await updateCategory(editingCategory.id, data);
+      } else {
+        // Add new category
+        await addCategory(data, user.uid);
       }
 
-      await updateCategory(editingCategory.id, data);
-    } else {
-      await addCategory(data, user.uid);
-    }
+      // close form only after successful save
+      setShowForm(false);
+      setEditingCategory(null);
 
-    setShowForm(false);
-    setEditingCategory(null);
+    } catch (err) {
+      console.error("Category save failed:", err);
+
+      setError(
+        err.message || "Failed to save category."
+      );
+    }
   }
 
   async function handleDelete(category) {
